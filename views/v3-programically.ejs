@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Node js Google v3 Recaptcha Example Tutorial</title>
+    <script src="https://www.google.com/recaptcha/api.js?render=XXXXXX"></script>
+    <script>
+      function onClick() {
+        grecaptcha.ready(function() {
+            grecaptcha.execute('XXXXXX', {action:'validate_captcha'}).then(function(token) {
+              document.getElementById('g-recaptcha-response').value = token;
+              document.getElementById('form').submit();
+            });
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Google Recaptcha Tutorial</h1><br />
+    <form method="post" id="form" action="/captcha?type=v3">
+      <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response"></input>
+      <input type="text" name="name"></input>
+      <input type="button" onclick="onClick()" value="Send"></input>
+    </form>
+  </body>
+</html>
+

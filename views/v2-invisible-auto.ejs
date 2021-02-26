@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Node js Google v3 Recaptcha Example Tutorial</title>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+      function onSubmit(token) {
+        document.getElementById("demo-form").submit();
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Google Recaptcha Tutorial</h1><br />
+    <form id='demo-form' action="/captcha?type=v2-invisible" method="POST">
+      <button class="g-recaptcha" data-sitekey="XXXXXX" data-callback='onSubmit'>Submit</button>
+      <br/>
+    </form>
+  </body>
+</html>
+
